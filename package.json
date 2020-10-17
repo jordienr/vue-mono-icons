@@ -14,5 +14,13 @@
     "pascal-case": "^3.1.1"
   },
   "author": "Jordi Enric <jordi.err@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue-component",
+    "vue-icons",
+    "icons",
+    "mono"
+  ]
 }
