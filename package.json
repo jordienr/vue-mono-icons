@@ -15,6 +15,10 @@
   },
   "author": "Jordi Enric <jordi.err@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordienr/vue-mono-icons.git"
+  },
   "keywords": [
     "vue",
     "vuejs",
