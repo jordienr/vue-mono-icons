@@ -1,0 +1,18 @@
+{
+  "name": "vue-mono-icons",
+  "version": "1.0.0",
+  "description": "Mono icon library and components for VueJS",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mono-icons": "^1.0.5"
+  },
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "pascal-case": "^3.1.1"
+  },
+  "author": "Jordi Enric <jordi.err@gmail.com>",
+  "license": "MIT"
+}

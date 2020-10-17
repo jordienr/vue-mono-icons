@@ -1,0 +1,44 @@
+
+<template>
+    <div class="mono-icon" ref="monoIcon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.7071 6.29289C18.0976 6.68342 18.0976 7.31658 17.7071 7.70711L9.41421 16L15 16C15.5523 16 16 16.4477 16 17C16 17.5523 15.5523 18 15 18L7 18C6.44772 18 6 17.5523 6 17L6 9C6 8.44771 6.44772 8 7 8C7.55229 8 8 8.44771 8 9L8 14.5858L16.2929 6.29289C16.6834 5.90237 17.3166 5.90237 17.7071 6.29289Z" fill="#0D0D0D"/>
+</svg>
+
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'ArrowLeftDownIcon',
+  props: {
+    size: {
+        type: String,
+        default: '24'
+    },
+    color: {
+        type: String,
+        default: '#434343'
+    }
+  },
+  methods: {
+    update() {
+      this.$refs.monoIcon.children[0].children.forEach(child => child.setAttribute('fill', ''))
+      this.$refs.monoIcon.children[0].setAttribute('fill', this.color)
+      this.$refs.monoIcon.children[0].setAttribute('height', this.size)
+      this.$refs.monoIcon.children[0].setAttribute('width', this.size)
+    }
+  },
+  watch: {
+    size() {
+      this.update()
+    },
+    color() {
+      this.update()
+    }
+  },
+  mounted() {
+    this.update()
+  }
+}
+</script>
