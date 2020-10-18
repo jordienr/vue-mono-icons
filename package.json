@@ -1,6 +1,6 @@
 {
   "name": "vue-mono-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mono icon library and components for VueJS",
   "main": "src/index.js",
   "scripts": {

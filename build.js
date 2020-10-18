@@ -51,7 +51,8 @@ export default {
     this.update()
   }
 }
-</script>`
+</script>
+`.trim()
 
 async function getSvgArrayFromPath(path) {
   const dir = await fs.promises.opendir(path)
