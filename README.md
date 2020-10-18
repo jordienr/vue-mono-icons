@@ -8,7 +8,7 @@ Thanks to Mono for designing them and making them Open Source.
 
 ## Installation 
 ```
-npm i vue-mono-icons
+npm i --save-dev vue-mono-icons
 ```
 
 ## Usage
