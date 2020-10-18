@@ -36,6 +36,23 @@ export default {
 
 ```
 
+## Global styles
+
+If you want to set the styles once and forget for all icons write this CSS somewhere in your global scope
+```vue
+<style lang="css">
+  .mono-icon svg {
+    fill: indigo;
+    width: 44px;
+    height: 44px;
+  }
+</style>
+```
+
+⚠ Don't set this css as "scoped" or it will not work.
+
+You can also add it to a separate file and import it.
+
 ## Icon names
 
 You can find the full list here  
