@@ -1,10 +1,6 @@
 <template>
     <div class="mono-icon" ref="monoIcon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 5C6 3.89543 6.89543 3 8 3H16C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H8C6.89543 21 6 20.1046 6 19V5ZM16 5H8V19H16V5Z" fill="#0D0D0D"/>
-<path d="M13 17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17C11 16.4477 11.4477 16 12 16C12.5523 16 13 16.4477 13 17Z" fill="#0D0D0D"/>
-</svg>
-
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5zm10 0H8v14h8V5z" fill="#0D0D0D"/><path d="M13 17a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" fill="#0D0D0D"/></svg>
     </div>
 </template>
 

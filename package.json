@@ -4,10 +4,11 @@
   "description": "Mono icon library and components for VueJS",
   "main": "src/index.js",
   "scripts": {
+    "build": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "mono-icons": "^1.0.5"
+    "mono-icons": "^1.2.4"
   },
   "devDependencies": {
     "fs-extra": "^9.0.1",
