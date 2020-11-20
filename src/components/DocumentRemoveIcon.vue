@@ -19,10 +19,11 @@ export default {
   },
   methods: {
     update() {
-      this.$refs.monoIcon.children[0].children.forEach(child => child.setAttribute('fill', ''))
+      this.$refs.monoIcon.children[0].children.forEach(child => child.removeAttribute('fill'))
       this.$refs.monoIcon.children[0].setAttribute('fill', this.color)
       this.$refs.monoIcon.children[0].setAttribute('height', this.size)
       this.$refs.monoIcon.children[0].setAttribute('width', this.size)
+      this.$refs.monoIcon.children[0].setAttribute('viewBox', '0 0 24 24')
     }
   },
   watch: {
