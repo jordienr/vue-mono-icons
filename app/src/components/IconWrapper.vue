@@ -74,7 +74,8 @@ export default {
   margin: 1rem;
   font-size: 12px;
   text-align: center;
-  height: 140px;
+  height: 144px;
+  width: 144px;
   display: flex;
   align-items: center;
   justify-content: center;

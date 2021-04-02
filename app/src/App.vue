@@ -149,9 +149,9 @@ header li {
 .icon-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .icon-wrapper {
-  flex-basis: 20%;
-  min-width: 20%;
+  /* width: 140px; */
 }
 </style>
