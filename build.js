@@ -9,6 +9,7 @@ const monoIconsPath = 'node_modules/mono-icons/svg';
   const data = await getSvgArrayFromPath(monoIconsPath)
   await buildComponentsDirectory(data)
   await buildMainJsFile(data)
+  await buildIconListFile(data)
 })()
 
 const componentTemplate = (name, svg) => `
@@ -86,6 +87,14 @@ async function buildComponentsDirectory(data) {
 
     fs.ensureDir(path.dirname(componentPath)).then(() => fs.writeFile(componentPath, componentCode, 'utf-8')).catch(err => console.log(err))
   })
+}
+
+async function buildIconListFile(data) {
+  const iconNames = data.map(component => `"${component.pascalCaseName}"`)
+
+  const iconListExportString = `export const iconList = [${iconNames.toString()}]`
+
+  return fs.outputFile('./src/iconList.js', iconListExportString)
 }
 
 async function buildMainJsFile(data) {

@@ -2,11 +2,14 @@
 
 Library of Vue Components based on the open source Mono Icons.
 
-Find all the icons here https://icons.mono.company/
+Official website: <https://icons.mono.company/>
+
+Find all the icons & easily copy the name or import string here: <https://vue-mono-icons.netlify.app/>
 
 Thanks to Mono for designing them and making them Open Source.
 
-## Installation 
+## Installation
+
 ```
 npm i --save-dev vue-mono-icons
 ```
@@ -16,36 +19,36 @@ npm i --save-dev vue-mono-icons
 ```vue
 <template>
   <div class="home">
-      <h1>Vue Mono icons</h1>
-      <TagIcon color="indigo" />
-      <DeleteIcon size="18" color="red" />
+    <h1>Vue Mono icons</h1>
+    <TagIcon color="indigo" />
+    <DeleteIcon size="18" color="red" />
   </div>
 </template>
 
 <script>
-import { TagIcon, DeleteIcon } from 'vue-mono-icons'
+import { TagIcon, DeleteIcon } from "vue-mono-icons";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     TagIcon,
-    DeleteIcon
-  }
-}
+    DeleteIcon,
+  },
+};
 </script>
-
 ```
 
 ## Global styles
 
 If you want to set the styles once and forget for all icons write this CSS somewhere in your global scope
+
 ```vue
 <style lang="css">
-  .mono-icon svg {
-    fill: indigo;
-    width: 44px;
-    height: 44px;
-  }
+.mono-icon svg {
+  fill: indigo;
+  width: 44px;
+  height: 44px;
+}
 </style>
 ```
 
@@ -56,17 +59,22 @@ You can also add it to a separate file and import it.
 ## Icon names
 
 You can find the full list here  
-https://icons.mono.company/
+<https://icons.mono.company/>
 
 All icon names are PascalCase with "Icon" at the end.
 
 delete = DeleteIcon
 chevron-double-right = ChevronDoubleRightIcon
 
+You can also import the whole icon list from `vue-mono-icons/src/iconList.js`
+
+```js
+import { iconList } from "vue-mono-icons/src/iconList";
+```
+
 ## Acknowledgements
 
 - Mono Icons
 - This library is based on svelte-mono-icons and vue-feather-icons
-
 
 ### Thank you for reading 😁
