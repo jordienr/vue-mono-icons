@@ -10,7 +10,7 @@
       <p>Copied successfully</p>
     </div>
     <div class="icon-component" v-else-if="!hovering">
-      <component :is="iconComponent"></component>
+      <component :is="iconComponent" :color="color"></component>
       <span>{{ iconName }}</span>
     </div>
     <div class="actions" v-else>
@@ -28,6 +28,9 @@ export default {
     iconName: {
       type: String,
       required: true,
+    },
+    color: {
+      type: String,
     },
   },
   data: () => ({

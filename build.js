@@ -2,6 +2,7 @@ const path = require('path')
 // const mono = require('mono-icons')
 const pascalCase = require('pascal-case')
 const fs = require('fs-extra')
+const parseHTML = require('node-html-parser').parse;
 
 const monoIconsPath = 'node_modules/mono-icons/svg';
 
@@ -12,10 +13,19 @@ const monoIconsPath = 'node_modules/mono-icons/svg';
   await buildIconListFile(data)
 })()
 
-const componentTemplate = (name, svg) => `
+const componentTemplate = (name, path) => `
 <template>
     <div class="mono-icon" ref="monoIcon">
-        ${svg}
+    <svg xmlns="http://www.w3.org/2000/svg"
+      :width="size"
+      :height="size"
+      viewBox="0 0 24 24"
+      aria-labelledby="${name}"
+      role="presentation"
+      :fill="color"
+    >
+      ${path}
+    </svg>
     </div>
 </template>
 
@@ -24,33 +34,16 @@ export default {
   name: '${name}',
   props: {
     size: {
-        type: String,
+        type: [String, Number],
         default: '24'
+    },
+    width: {
+      type: [String, Number]
     },
     color: {
         type: String,
-        default: '#434343'
+        default: 'currentColor'
     }
-  },
-  methods: {
-    update() {
-      this.$refs.monoIcon.children[0].children.forEach(child => child.removeAttribute('fill'))
-      this.$refs.monoIcon.children[0].setAttribute('fill', this.color)
-      this.$refs.monoIcon.children[0].setAttribute('height', this.size)
-      this.$refs.monoIcon.children[0].setAttribute('width', this.size)
-      this.$refs.monoIcon.children[0].setAttribute('viewBox', '0 0 24 24')
-    }
-  },
-  watch: {
-    size() {
-      this.update()
-    },
-    color() {
-      this.update()
-    }
-  },
-  mounted() {
-    this.update()
   }
 }
 </script>
@@ -83,7 +76,15 @@ async function buildComponentsDirectory(data) {
   data.forEach(component => {
     const { svg, pascalCaseName } = component
     const componentPath = `${componentsPath + pascalCaseName}.vue`
-    const componentCode = componentTemplate(pascalCaseName, svg)
+    const svgEl = parseHTML(svg)
+    const svgPath = svgEl.firstChild
+
+    // Add fill attr to svg
+    svgEl.fill = 'currentColor'
+    // Remove fill attrs from child elements
+    svgPath.childNodes.forEach(i => i.removeAttribute('fill'))
+
+    const componentCode = componentTemplate(pascalCaseName, svgPath.firstChild.toString())
 
     fs.ensureDir(path.dirname(componentPath)).then(() => fs.writeFile(componentPath, componentCode, 'utf-8')).catch(err => console.log(err))
   })
